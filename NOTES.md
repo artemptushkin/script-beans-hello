@@ -20,3 +20,9 @@ bean("javaInterfaceBean") {
 }
 ```
 
+### TODO
+1. Annotation @EnableScriptBeans
++ properties: 
+    * CLASSPATH; GIT etc.
+    * fileNames: abc.kts, cat.kts
+2. Annotation @ScriptBean(...fileName)

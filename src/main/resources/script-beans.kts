@@ -1,7 +1,7 @@
+
 import org.springframework.context.support.beans
-import ru.spring.functional.KotlinInterface
 import ru.spring.functional.scriptbeanshello.JavaFunctionalInterface
-import ru.spring.functional.scriptbeanshello.JavaInterface
+import ru.spring.functional.scriptbeanshello.SomeLambdaInterface
 
 beans {
     bean("helloDslBean") {
@@ -14,19 +14,9 @@ beans {
         }
     }
 
-    bean("kotlinInterfaceBean") {
-        object : KotlinInterface {
-            override fun bonjour(): String {
-                return "hi from kotlin interface"
-            }
-        }
-    }
-
-    bean("javaInterfaceBean") {
-        object : JavaInterface {
-            override fun hello(): String = "hello from java interface"
-
-            override fun bye(): String = "bye-bye from java interface"
+    bean("someLambdaInterface") {
+        SomeLambdaInterface {
+            it > 10
         }
     }
 }

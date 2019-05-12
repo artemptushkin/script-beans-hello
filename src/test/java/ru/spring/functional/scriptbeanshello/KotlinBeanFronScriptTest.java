@@ -10,17 +10,21 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.List;
 
-import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.*;
 
 @RunWith(SpringRunner.class)
-@ActiveProfiles("dslClass")
+@ActiveProfiles("script")
 @SpringBootTest
-public class KotlinDslClassTest {
+public class KotlinBeanFronScriptTest {
 
 	@Autowired
 	ApplicationContext applicationContext;
 	@Autowired
 	String helloDslBean;
+	@Autowired
+	JavaFunctionalInterface javaFunctionalInterfaceBean;
+	@Autowired
+	SomeLambdaInterface someLambdaInterfaceBean;
 
 	@Autowired
 	List<ApplicationContext> contexts;
@@ -29,6 +33,10 @@ public class KotlinDslClassTest {
 	public void contextLoads() {
 		assertNotNull(applicationContext.getBean("helloDslBean"));
 		assertNotNull(applicationContext.getBean("javaFunctionalInterfaceBean"));
+
+		assertEquals("hi from java functional interface", javaFunctionalInterfaceBean.hi());
+
+		assertTrue(someLambdaInterfaceBean.test(12));
 	}
 
 }

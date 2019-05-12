@@ -45,6 +45,11 @@
 			<artifactId>kotlin-compiler-embeddable</artifactId>
 			<version>${kotlin.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>org.jetbrains.kotlin</groupId>
+			<artifactId>kotlin-scripting-compiler-embeddable</artifactId>
+			<version>${kotlin.version}</version>
+		</dependency>
 
 
 		<dependency>
@@ -68,7 +73,8 @@
 			<version>${kotlin.version}</version>
 			<scope>test</scope>
 		</dependency>
-	</dependencies>
+
+    </dependencies>
 
 	<build>
 		<plugins>

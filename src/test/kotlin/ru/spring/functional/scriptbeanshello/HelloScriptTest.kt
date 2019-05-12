@@ -1,3 +1,4 @@
+package ru.spring.functional.scriptbeanshello
 import junit.framework.Assert.assertEquals
 import org.junit.Test
 import java.nio.file.Files
@@ -12,6 +13,6 @@ class HelloScriptTest {
         val engine = ScriptEngineManager().getEngineByExtension("kts")
         val reader = Files.newBufferedReader(Paths.get(ClassLoader.getSystemResource("hello-script.kts").toURI()))
 
-        assertEquals("hello", engine.eval(reader))
+        assertEquals("hi", engine.eval(reader))
     }
 }
