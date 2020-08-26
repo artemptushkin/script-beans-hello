@@ -27,9 +27,11 @@ public class GroovyConfigTests {
 	@Autowired
 	ApplicationContext applicationContext;
 
+	@Autowired
+	MyService groovyBean;
+
 	@Test
 	public void groovyBeanExists() {
-		MyService groovyBean = applicationContext.getBean("groovyBean", MyService.class);
 		assertNotNull(groovyBean);
 		assertNotNull(groovyBean.getMyField());
 	}
