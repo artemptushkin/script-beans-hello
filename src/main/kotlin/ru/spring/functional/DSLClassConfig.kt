@@ -9,7 +9,7 @@ import javax.annotation.PostConstruct
 
 @Profile("dslClass")
 @Configuration
-open class Config(private var applicationContext: ConfigurableApplicationContext) {
+open class DSLClassConfig(private var applicationContext: ConfigurableApplicationContext) {
 
     @Bean
     open fun genericContext(): GenericApplicationContext = GenericApplicationContext()
