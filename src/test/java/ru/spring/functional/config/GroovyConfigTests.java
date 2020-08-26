@@ -3,7 +3,7 @@ package ru.spring.functional.config;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import ru.spring.functional.scriptbeanshello.BazInterface;
+import ru.spring.functional.scriptbeanshello.MyService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
@@ -11,7 +11,7 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotNull;
 
 /**
  * Ignored by:
@@ -29,7 +29,8 @@ public class GroovyConfigTests {
 
 	@Test
 	public void groovyBeanExists() {
-		BazInterface groovyBean = applicationContext.getBean("groovyBean", BazInterface.class);
+		MyService groovyBean = applicationContext.getBean("groovyBean", MyService.class);
 		assertNotNull(groovyBean);
+		assertNotNull(groovyBean.getMyField());
 	}
 }

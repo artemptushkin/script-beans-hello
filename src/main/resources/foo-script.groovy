@@ -1,9 +1,12 @@
-import ru.spring.functional.scriptbeanshello.BazInterface;
+import ru.spring.functional.scriptbeanshello.BazInterface
+import ru.spring.functional.scriptbeanshello.MyService
 
 beans {
-	groovyBean(BazInterface) {
-		return { ->
-			"hello from groovy scripts"
-		}
-	}
+	    groovyBean(MyService) {
+			myField = new BazInterface() {
+				@Override
+				String hello() {
+					return "hello from script"
+				}
+		}}
 }
